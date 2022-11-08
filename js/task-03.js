@@ -15,22 +15,19 @@ const images = [
 
 const listGallery = document.querySelector('.gallery');
 
-// const elementImg = images.forEach(element => {
-//   const itemEl = document.createElement('li');
-//   itemEl.classList.add('gallery-list');
-//   const imgEl = document.createElement('img');
-//   imgEl.src = `${element.url}`;
-//   imgEl.alt = `${element.alt}`;
-//   console.log(itemEl.appendChild(imgEl));
-// });
-
 const elementImg = images.map((element) => {
-  // const itemEl = document.createElement('li');
-  // itemEl.classList.add('gallery-list');
+  const itemEl = document.createElement('li')
   const imgEl = document.createElement('img');
   imgEl.src = `${element.url}`;
   imgEl.alt = `${element.alt}`;
-
-  return imgEl;
+  imgEl.style.width = '600px';
+  imgEl.style.height = 'auto';
+  imgEl.style.backgroundSize = "cover"
+  imgEl.style.marginBottom = "15px"
+  return itemEl.insertAdjacentElement("beforeend",imgEl);
 })
-console.log(...elementImg);
+
+listGallery.append(...elementImg)
+listGallery.style.display = "flex"
+listGallery.style.alignItems = "center";
+listGallery.style.flexDirection = "column";
