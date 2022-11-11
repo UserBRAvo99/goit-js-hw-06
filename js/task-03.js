@@ -13,21 +13,38 @@ const images = [
   },
 ];
 
-const listGallery = document.querySelector('.gallery');
 
-const elementImg = images.map((element) => {
-  const itemEl = document.createElement('li')
-  const imgEl = document.createElement('img');
-  imgEl.src = `${element.url}`;
-  imgEl.alt = `${element.alt}`;
-  imgEl.style.width = '600px';
-  imgEl.style.height = 'auto';
-  imgEl.style.backgroundSize = "cover"
-  imgEl.style.marginBottom = "15px"
-  return itemEl.insertAdjacentElement("beforeend",imgEl);
-})
 
-listGallery.append(...elementImg)
-listGallery.style.display = "flex"
-listGallery.style.alignItems = "center";
-listGallery.style.flexDirection = "column";
+
+// Перший варіант
+
+// const listGallery = document.querySelector('.gallery');
+
+// const elementImg = images.map((element) => {
+//   const itemEl = document.createElement('li')
+//   const imgEl = document.createElement('img');
+//   imgEl.src = `${element.url}`;
+//   imgEl.alt = `${element.alt}`;
+//   imgEl.style.width = '600px';
+//   imgEl.style.height = 'auto';
+//   imgEl.style.backgroundSize = "cover"
+//   imgEl.style.marginBottom = "15px"
+//   return itemEl.insertAdjacentElement("beforeend",imgEl);
+// })
+
+// listGallery.append(...elementImg)
+// listGallery.style.display = "flex"
+// listGallery.style.alignItems = "center";
+// listGallery.style.flexDirection = "column";
+
+
+
+// Другий варіант з insertAdjacentElement
+
+// const listGallery = document.querySelector('.gallery');
+
+// const imageElement = images.map((image) => `<li class='gallery_item'><img class='gallery_img' src='${image.url}' alt='${image.alt}'></li>`).join("");
+
+// console.log(imageElement);
+
+// listGallery.insertAdjacentElement("beforebegin", imageElement)
