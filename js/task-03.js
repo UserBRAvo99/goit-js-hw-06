@@ -41,10 +41,9 @@ const images = [
 
 // Другий варіант з insertAdjacentElement
 
-// const listGallery = document.querySelector('.gallery');
+const listGallery = document.querySelector('.gallery');
 
-// const imageElement = images.map((image) => `<li class='gallery_item'><img class='gallery_img' src='${image.url}' alt='${image.alt}'></li>`).join("");
+const imageElement = images.map((image) => `<li class='gallery_item' style="display:flex;"><img class='gallery_img' src='${image.url}' alt='${image.alt}' style = " width : 600px; height:auto; margin-bottom:15px;S"></li>`).join("");
 
-// console.log(imageElement);
 
-// listGallery.insertAdjacentElement("beforebegin", imageElement)
+listGallery.insertAdjacentHTML("afterbegin", imageElement)
