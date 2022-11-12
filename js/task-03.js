@@ -43,7 +43,7 @@ const images = [
 
 const listGallery = document.querySelector('.gallery');
 
-const imageElement = images.map((image) => `<li class='gallery_item' style="display:flex;"><img class='gallery_img' src='${image.url}' alt='${image.alt}' style = " width : 600px; height:auto; margin-bottom:15px;S"></li>`).join("");
+const imageElement = images.map((image) => `<li class='gallery_item' style="display:flex;justify-content: center;"><img class='gallery_img' src='${image.url}' alt='${image.alt}' style = " width : 600px; height:auto; margin-bottom:15px;"></li>`).join("");
 
 
 listGallery.insertAdjacentHTML("afterbegin", imageElement)
